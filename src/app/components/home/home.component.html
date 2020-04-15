@@ -1,1 +1,19 @@
-<h1>{{ title }}</h1>
+<div class="container container-fluid center">    
+    <div class="col">
+        <div class="jumbotron">
+            <h1>{{ title }}</h1>
+            <p>Enjoy the most exotic animals of our Zoo</p>
+            <div class="btn-group" role="group">
+                <a class="btn btn-outline-primary" role="button" [routerLink]="['/animales']">
+                    See animals
+                </a>
+                <a class="btn btn-outline-success" role="button" [routerLink]="['/cuidadores']">
+                    See keepers
+                </a>
+                <a class="btn btn-outline-warning" role="button" [routerLink]="['/contacto']">
+                    Contact us
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,22 +12,22 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
 
-        <a class="nav-link"[routerLink]="['/home']">
+        <a class="nav-link"[routerLink]="['/home']" [routerLinkActive]="['active']">
           <fa-icon [icon]="faHome"></fa-icon> 
           Inicio
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"[routerLink]="['/animales']">
+        <a class="nav-link"[routerLink]="['/animales']" [routerLinkActive]="['active']">
           <fa-icon [icon]="faHippo"></fa-icon>
           Animales
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"[routerLink]="['/cuidadores']" id="navbarDropdown" role="button" 
+        <a class="nav-link dropdown-toggle"[routerLink]="['/cuidadores']" [routerLinkActive]="['active']" id="navbarDropdown" role="button" 
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <fa-icon [icon]="faWalking"></fa-icon>
           Cuidadores
@@ -44,13 +44,13 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link"[routerLink]="['/tienda']">
+        <a class="nav-link"[routerLink]="['/tienda']" [routerLinkActive]="['active']">
           <fa-icon [icon]="faStore"></fa-icon>
           Tienda
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"[routerLink]="['/contacto']">
+        <a class="nav-link"[routerLink]="['/contacto']" [routerLinkActive]="['active']">
           <fa-icon [icon]="faEnvelope"></fa-icon>
           Contacto
         </a>
