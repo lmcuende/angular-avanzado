@@ -24,7 +24,9 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@tinymce/tinymce-angular": "^3.5.0",
     "rxjs": "~6.5.4",
+    "tinymce": "^5.2.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
@@ -41,6 +43,7 @@
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "jquery": "^3.5.0",
+    "jquery-dotdotdot": "^1.8.2",
     "karma": "^5.0.1",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.0",

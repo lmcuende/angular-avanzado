@@ -1,5 +1,6 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { faHome, faHippo, faWalking, faStore, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+declare var tinymce: any;
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,11 @@ export class AppComponent {
   ngOnInit() {
     this.emailContacto = localStorage.getItem('emailContacto');
     //console.log(localStorage.getItem('emailContacto'));
+    tinymce.init(
+      {
+        selector: "#mymce1"
+      }
+    );
   }
 
   ngDoCheck(){

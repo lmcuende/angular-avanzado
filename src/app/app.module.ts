@@ -1,9 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 
 import { routing, appRoutingProviders } from './app.routing';
 import { AppRoutingModule } from './app-routing.module';
+
+// Importar nuestro nuevo módulo
+import { ModuloEmailModule } from './moduloemail/moduloemail.module';
+import { AdminModule } from './admin/admin.module';
+
 
 // Components
 
@@ -23,6 +30,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,10 +45,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     BrowserModule,
+    EditorModule,
     FormsModule,
     AppRoutingModule,
     routing,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ModuloEmailModule,
+    AdminModule
   ],
   providers: [
     appRoutingProviders
