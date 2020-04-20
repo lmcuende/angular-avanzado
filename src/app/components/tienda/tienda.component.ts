@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { fadeIn } from '../animations';
+
 declare var jQuery: any;
 declare var $: any;
 
@@ -19,8 +21,9 @@ declare var $: any;
           transform: 'scale(1.2)'
         })),
         transition('inactive => active', animate('3s linear')),
-        transition('active => inactive', animate('3s linear'))
-    ])
+        transition('active => inactive', animate('3s linear')),
+    ]),
+    fadeIn
 
   ]
 })
