@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { SidebarModule } from 'ng-sidebar';
 
 
 import { routing, appRoutingProviders } from './app.routing';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Importar nuestro nuevo módulo
 import { ModuloEmailModule } from './moduloemail/moduloemail.module';
@@ -45,13 +47,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     BrowserModule,
+    SidebarModule.forRoot(),
     EditorModule,
     FormsModule,
     AppRoutingModule,
     routing,
     FontAwesomeModule,
     ModuloEmailModule,
-    AdminModule
+    BrowserAnimationsModule
   ],
   providers: [
     appRoutingProviders

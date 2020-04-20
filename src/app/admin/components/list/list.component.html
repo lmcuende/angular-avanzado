@@ -1,1 +1,63 @@
-<h3>{{ title }}</h3>
+<div class="col-lg-12">
+    <h3>{{ title }}</h3>
+
+    <table class="table table-hover">
+        <thead class="thead-default">
+            <tr class="table-active">
+                <th scope="col">Nombre</th>
+                <th scope="col">Año</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let n of numbers; let i = index">
+                <td>oso Panda {{ i + 1 }}</td>
+                <td>2012</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-outline-success" role="button" [routerLink]="['/listado']">
+                            <fa-icon [icon]="faEye"></fa-icon>
+                            See
+                        </a>
+                        <a class="btn btn-outline-primary" role="button" [routerLink]="['/listado']">
+                            <fa-icon [icon]="faEdit"></fa-icon>
+                            Edit
+                        </a>
+                        <a class="btn btn-outline-danger" role="button" [routerLink]="['/listado']">
+                            <fa-icon [icon]="faTrash"></fa-icon>
+                            Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- <div class="btn-group" role="group">
+    <a class="btn btn-outline-primary" role="button" [routerLink]="['/animales']">
+        See animals
+    </a>
+    <a class="btn btn-outline-success" role="button" [routerLink]="['/cuidadores']">
+        See keepers
+    </a>
+    <a class="btn btn-outline-warning" role="button" [routerLink]="['/contacto']">
+        Contact us
+    </a>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

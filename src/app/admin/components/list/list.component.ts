@@ -1,4 +1,5 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
+import { faEdit, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'admin-list',
@@ -6,4 +7,8 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 })
 export class ListComponent {
   title = 'Report';
+  numbers= new Array(10);
+  faEdit = faEdit;
+  faEye = faEye;
+  faTrash = faTrash;
 }

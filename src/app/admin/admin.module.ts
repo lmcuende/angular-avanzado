@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminRoutingModule } from './admin-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Components
 import { MainComponent } from './components/main/main.component';
@@ -22,7 +23,8 @@ import { EditComponent } from './components/edit/edit.component';
         CommonModule,
         FormsModule,
         HttpClientModule,
-        AdminRoutingModule
+        AdminRoutingModule,
+        FontAwesomeModule
     ],
     exports: [
         MainComponent,

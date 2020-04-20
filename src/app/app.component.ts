@@ -16,6 +16,8 @@ export class AppComponent {
   faStore = faStore;
   faEnvelope = faEnvelope;
 
+  
+
   ngOnInit() {
     this.emailContacto = localStorage.getItem('emailContacto');
     //console.log(localStorage.getItem('emailContacto'));

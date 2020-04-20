@@ -1,2 +1,126 @@
-<h3>{{ title }} </h3>
-<router-outlet></router-outlet>
+<div class="container">    
+    <div class="row">    
+        <div class="col-lg-4">
+            <h3>{{ title }}</h3>
+            
+            
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+                <div class="collapse navbar-collapse" id="sidebar">
+
+                        <ul class="nav nav-pills flex-column">
+
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="['listado']">Listado</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="['crear']">Crear</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="['informacion']">Información</a>
+                            </li>
+                            
+                        </ul>
+                    
+                </div>
+
+            </nav>
+        </div>
+
+        <div class="col-lg-8">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="col-lg-4">
+    <h3>{{ title }} </h3>
+    <ng-sidebar-container>
+        <ng-sidebar [(opened)]="_opened">
+            
+                <ul>
+                    <li>
+                        <a [routerLink]="['listado']">Listado</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['crear']">Crear</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['informacion']">Información</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['otros']">Otros</a>
+                    </li>
+                    
+                </ul>
+            
+        </ng-sidebar>
+
+        <div ng-sidebar-content>
+            <button (click)="_toggleSidebar()">Toggle sidebar</button>
+            <div class="col-lg-8">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
+    </ng-sidebar-container>
+</div> -->
+
+
+
+
+<!-- <div class="col-lg-4">
+    <h3>{{ title }} </h3>
+    <ng-sidebar-container>
+        <ng-sidebar [(opened)]="_opened">
+            <div class="sidebar-admin" data-example-id="sample-nav-stacked">
+                <ul class="nav nav-pills nav-stacked nav-pill-stacked-example">
+                    <li role="presentation" [routerLinkActive]="['active']">
+                        <a [routerLink]="['listado']">Listado</a>
+                    </li>
+                    <li role="presentation" [routerLinkActive]="['active']">
+                        <a [routerLink]="['crear']">Crear</a>
+                    </li>
+                    <li role="presentation" [routerLinkActive]="['active']">
+                        <a [routerLink]="['informacion']">Información</a>
+                    </li>
+                    <li role="presentation" [routerLinkActive]="['active']">
+                        <a [routerLink]="['listado']"></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </ng-sidebar>
+
+        <div ng-sidebar-content>
+            <button (click)="_toggleSidebar()">Toggle sidebar</button>
+            <div class="col-lg-8">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
+    </ng-sidebar-container>
+</div> -->
