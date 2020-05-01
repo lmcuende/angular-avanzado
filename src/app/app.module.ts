@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { SidebarModule } from 'ng-sidebar';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { routing, appRoutingProviders } from './app.routing';
@@ -33,6 +34,11 @@ import { PuebloComponent }       from './components/otros/pueblo.component';
 import { MiFormularioComponent } from './components/otros/mi-formulario.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+// Servicios
+
+import { UserService } from './services/user.service';
+
+
 
 
 
@@ -60,10 +66,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     routing,
     FontAwesomeModule,
     ModuloEmailModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    UserService
+
   ],
   bootstrap: [AppComponent]
 })
