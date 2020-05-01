@@ -1,0 +1,22 @@
+instalación de MongoDb y administración:
+
+https://www.digitalocean.com/community/tutorials/como-instalar-mongodb-en-ubuntu-18-04-es
+
+resumen:
+
+sudo systemctl status mongodb
+
+sudo systemctl stop mongodb
+
+sudo systemctl start mongodb
+
+sudo systemctl restart mongodb
+
+Por defecto, MongoDB se configura para iniciarse de forma automática con el servidor. Si desea desactivar el inicio automático, escriba lo siguiente:
+
+    sudo systemctl disable mongodb
+
+Volver a habilitarlo es igualmente sencillo. Para hacerlo, utilice lo siguiente:
+
+    sudo systemctl enable mongodb
+

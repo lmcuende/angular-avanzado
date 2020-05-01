@@ -1,5 +1,5 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
-import { faHome, faHippo, faWalking, faStore, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faHippo, faWalking, faStore, faEnvelope, faUser, faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 declare var tinymce: any;
 
 @Component({
@@ -15,6 +15,8 @@ export class AppComponent {
   faWalking = faWalking;
   faStore = faStore;
   faEnvelope = faEnvelope;
+  faUser = faUser;
+  faSignInAlt = faSignInAlt;
 
   
 

@@ -28,7 +28,8 @@
               "./node_modules/tinymce/skins/ui/oxide/skin.min.css",
               "./node_modules/tinymce/skins/ui/oxide/content.min.css",
               "./node_modules/tinymce/skins/content/default/content.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/mystyles.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",

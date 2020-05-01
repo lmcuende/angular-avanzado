@@ -12,12 +12,17 @@ body{
 }
 
 .navbar-nav .active {
-    border-bottom: 2px solid orange;
+    border-bottom: 2px solid orange !important;
 }
 
 .navbar-nav :hover {
     transition: all 200ms;
     border-bottom: 1px solid orange;
+}
+
+.navbar-nav>li>a {
+    transition:all 300ms;
+    border-bottom: 3px solid transparent;
 }
 
 .boton_transiciones {

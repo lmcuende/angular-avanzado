@@ -56,6 +56,21 @@
         </a>
       </li>
     </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/registro']" [routerLinkActive]="['active']">
+            <fa-icon [icon]="faSignInAlt"></fa-icon>
+            Registro
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']">
+            <fa-icon [icon]="faUser"></fa-icon>
+            Login
+        </a>
+      </li>
+    </ul>
     
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
