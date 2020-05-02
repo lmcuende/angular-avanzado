@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../../models/user';
 import { GLOBAL } from '../../services/global';
-// import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user.service';
 
 
 
@@ -14,11 +14,13 @@ import { GLOBAL } from '../../services/global';
 export class RegisterComponent implements OnInit{
     public title: String;
     public user: User;
+    public status: string;
 
     constructor(
         private _route: ActivatedRoute,
         private _router: Router,
         private _userService: UserService
+        
     ){
         this.title = 'Registro';
         this.user = new User('', '', '', '', '', 'ROLE_USER', '')
@@ -26,10 +28,25 @@ export class RegisterComponent implements OnInit{
 
     ngOnInit(){
         console.log('register.component cargado');
-        console.log(this._userService.register());
     }
 
-    onSubmit(){
-        console.log(this.user);
+    onSubmit(registerForm){
+        this._userService.register(this.user).subscribe(
+            response => {
+                if(response.user && response.user._id) {
+                    this.status = 'Success';
+                    this.user = new User('', '', '', '', '', 'ROLE_USER', '');
+                    registerForm.reset();
+
+                } else {
+                    this.status = 'Error';
+                }
+                
+            },
+            error => {
+                console.log(<any>error);
+            }
+
+        );
     }
 }
