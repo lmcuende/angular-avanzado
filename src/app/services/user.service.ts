@@ -17,13 +17,14 @@ export class UserService{
     register(user_to_register) {
         let params = JSON.stringify(user_to_register);
         let headers = new HttpHeaders({ 'Content-Type':'application/json' });
-        const resp =this._http.post(this.url + 'register', params, {headers: headers});
+        const resp = this._http.post(this.url + 'register', params, {headers: headers});
         console.log(resp);
 
         return this._http.post(this.url + 'register', params, {headers: headers})
-                         .map((res: Response) => res.json());
+                         .map((res) => res);
     }
     signup(user_to_login, gettoken = null) {
+
         if(gettoken != null) {
             user_to_login.gettoken = gettoken;
         }
@@ -32,6 +33,6 @@ export class UserService{
         let headers = new HttpHeaders({ 'Content-Type': 'application/json'});
 
         return this._http.post(this.url + 'login', params, { headers: headers })
-                         .map((res: Response) => res.json());
+                         .map((res) => res);
     }
 }

@@ -7,14 +7,16 @@ import { User } from '../../models/user';
 
 @Component({
     selector: 'login',
-    templateUrl: './login.component.html'
+    templateUrl: './login.component.html',
+    providers: [UserService]
 })
 
 export class LoginComponent implements OnInit{
     public title: String;
     public user: User;
-    public identity;
+    public identity : any;
     public token;
+    public status: string;
 
     constructor(
         private _route: ActivatedRoute,
@@ -33,26 +35,27 @@ export class LoginComponent implements OnInit{
         // Loguear al usuario y conseguir el objeto
        this._userService.signup(this.user).subscribe(
            response => {
-                this.identity = response.user;
+                this.identity = response;
 
-                if(!this.identity || !this.identity._id) {
+                if(!this.identity ) {
                     alert('El usuario no se ha logueado correctamente');
                 } else {
+                    this.identity.user.password = '';
                         //Mostrar identity
                     console.log(this.identity);
 
                         //Conseguir el token
                     this._userService.signup(this.user, 'true').subscribe(
                         response => {
-                             this.token = response.token;
-             
-                             if(!this.token.length <= 0) {
+                            this.token = response;
+;             
+                            if(this.token.length <= 0) {
                                  alert('El token no se ha generado');
-                             } else {
+                            } else {
                                  //Mostrar token
                                  console.log(this.token);
-             
-                             }
+                                 this.status = "Success";
+                            }
                         },
                         error => {
                             console.log(<any>error);
@@ -61,7 +64,11 @@ export class LoginComponent implements OnInit{
                 }
            },
            error => {
-               console.log(<any>error);
+               let errorMessage = <any>error;
+            //    if(errorMessage != null) {
+            //        const body = JSON.parse(error._body);
+            //        this.status = 'Error';
+            //    }
            }
        ); 
     }
