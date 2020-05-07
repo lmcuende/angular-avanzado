@@ -1,14 +1,22 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
-import { faHome, faHippo, faWalking, faStore, faEnvelope, faUser, faSignInAlt} from '@fortawesome/free-solid-svg-icons';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { faHome, faHippo, faWalking, faStore, faEnvelope, faUser, faSignInAlt, faIdCard, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
+import { UserService } from './services/user.service';
+import { User } from './models/user';
+
 declare var tinymce: any;
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [UserService]
 })
-export class AppComponent {
-  title = 'NGZOO';
+export class AppComponent implements OnInit, DoCheck {
+  public title: string;
+  public identity;
+  
   emailContacto: string;
   faHome = faHome;
   faHippo = faHippo;
@@ -17,22 +25,39 @@ export class AppComponent {
   faEnvelope = faEnvelope;
   faUser = faUser;
   faSignInAlt = faSignInAlt;
+  faIdCard = faIdCard;
+  faSignOutAlt = faSignOutAlt;
 
+  constructor(
+    private _userService: UserService,
+    private _route: ActivatedRoute,
+        private _router: Router
+  ){
+    this.title = 'NGZOO';
+  }
+  
   
 
   ngOnInit() {
     this.emailContacto = localStorage.getItem('emailContacto');
     //console.log(localStorage.getItem('emailContacto'));
-    tinymce.init(
-      {
-        selector: "#mymce1"
-      }
-    );
+    // tinymce.init(
+    //   {
+    //     selector: "#mymce1"
+    //   }
+    // );
+    this.identity = this._userService.getIdentity();
   }
 
   ngDoCheck(){
     this.emailContacto = localStorage.getItem('emailContacto');
-    //console.log('El DoCheck se ha ejecutado');
+    this.identity = this._userService.getIdentity();
+  }
+
+  logout() {
+    localStorage.clear();
+    this.identity = null;
+    this._router.navigate(['/']);
   }
 
   borrarEmail() {

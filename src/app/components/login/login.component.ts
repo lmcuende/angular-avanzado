@@ -28,33 +28,38 @@ export class LoginComponent implements OnInit{
     }
 
     ngOnInit(){
-        console.log('login.component cargado');
+        console.log('login.component cargado!');
+
+        console.log(this._userService.getIdentity());
+        console.log(this._userService.getToken());
     }
 
     onSubmit() {
         // Loguear al usuario y conseguir el objeto
        this._userService.signup(this.user).subscribe(
-           response => {
+            response => {
                 this.identity = response;
 
                 if(!this.identity ) {
                     alert('El usuario no se ha logueado correctamente');
                 } else {
                     this.identity.user.password = '';
-                        //Mostrar identity
-                    console.log(this.identity);
+                
+                    localStorage.setItem('identity', JSON.stringify(this.identity));
+                    
 
                         //Conseguir el token
                     this._userService.signup(this.user, 'true').subscribe(
                         response => {
-                            this.token = response;
-;             
+                            this.token = JSON.stringify(response);
+             
                             if(this.token.length <= 0) {
                                  alert('El token no se ha generado');
                             } else {
-                                 //Mostrar token
-                                 console.log(this.token);
+                                 localStorage.setItem('token', this.token);
                                  this.status = "Success";
+
+                                 this._router.navigate(['/']);
                             }
                         },
                         error => {
@@ -62,13 +67,15 @@ export class LoginComponent implements OnInit{
                         }
                     );
                 }
-           },
+            },
            error => {
                let errorMessage = <any>error;
-            //    if(errorMessage != null) {
-            //        const body = JSON.parse(error._body);
-            //        this.status = 'Error';
-            //    }
+               if(errorMessage != null) {
+                   console.log(error);
+                //    let body = JSON.parse(error);
+                   
+                   this.status = 'Error';
+               }
            }
        ); 
     }

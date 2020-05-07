@@ -57,25 +57,56 @@
       </li>
     </ul>
 
-    <ul class="nav navbar-nav navbar-right">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/registro']" [routerLinkActive]="['active']">
+          <span>
             <fa-icon [icon]="faSignInAlt"></fa-icon>
             Registro
+          </span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']">
+          <span>
             <fa-icon [icon]="faUser"></fa-icon>
             Login
+          </span>
         </a>
       </li>
     </ul>
+
+    <ul class="nav navbar-nav navbar-right" *ngIf="identity">
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle"[routerLink]="['/home']" [routerLinkActive]="['active']" id="navbarDropdown" role="button" 
+        data-toggle="dropdown" aria-haspopup="true">
+        <fa-icon [icon]="faUser"></fa-icon>
+          <span>{{ identity.user.name }}</span>
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" type="button" href="#">
+            <fa-icon [icon]="faIdCard"></fa-icon>
+            Datos
+          </a>
+          <a class="dropdown-item" type="button" (click)="logout()">
+            <fa-icon [icon]="faSignOutAlt"></fa-icon>
+            Salir
+          </a>
+          
+        </div>
+      </li>
+    </ul>
+
+
     
-    <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
+    
+    
   </div>
 </nav>
 
