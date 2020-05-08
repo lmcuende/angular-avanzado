@@ -17,15 +17,16 @@ import { AdminModule } from './admin/admin.module';
 
 // Components
 
-import { AppComponent }     from './app.component';
-import { TiendaComponent }  from './components/tienda/tienda.component';
-import { ParquesComponent } from './components/parques/parques.component';
-import { AnimalsComponent } from './components/animals/animals.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { HomeComponent }    from './components/home/home.component';
-import { KeepersComponent } from './components/keepers/keepers.component';
+import { AppComponent }      from './app.component';
+import { TiendaComponent }   from './components/tienda/tienda.component';
+import { ParquesComponent }  from './components/parques/parques.component';
+import { AnimalsComponent }  from './components/animals/animals.component';
+import { ContactComponent }  from './components/contact/contact.component';
+import { HomeComponent }     from './components/home/home.component';
+import { KeepersComponent }  from './components/keepers/keepers.component';
 import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent }    from './components/login/login.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 
 // Otros
@@ -55,7 +56,8 @@ import { UserService } from './services/user.service';
     PuebloComponent,
     MiFormularioComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
